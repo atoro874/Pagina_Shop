@@ -1,0 +1,54 @@
+{
+  "type": "footer",
+  "name": "Pie de página",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "benefit-shipping": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Envíos seguros",
+            "text": "Seguimiento en cada pedido."
+          }
+        },
+        "benefit-payment": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Pagos seguros",
+            "text": "Compra con confianza."
+          }
+        },
+        "benefit-support": {
+          "type": "benefit",
+          "settings": {
+            "heading": "Atención cercana",
+            "text": "Estamos aquí para ayudarte."
+          }
+        },
+        "footer-menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Información"
+          }
+        }
+      },
+      "block_order": ["benefit-shipping", "benefit-payment", "benefit-support", "footer-menu"],
+      "settings": {
+        "background_color": "#4D0E13",
+        "text_color": "#EEE4DA",
+        "show_brand": true,
+        "brand_heading": "Nuestra tienda",
+        "brand_text": "Diseñado con cuidado, pensado para acompañarte.",
+        "show_newsletter": true,
+        "newsletter_heading": "Recibe nuestras novedades",
+        "email_placeholder": "Tu correo electrónico",
+        "newsletter_button": "Suscribirme",
+        "success_message": "Gracias por suscribirte.",
+        "copyright_text": "Todos los derechos reservados.",
+        "show_payment_methods": true
+      }
+    }
+  },
+  "order": ["footer"]
+}

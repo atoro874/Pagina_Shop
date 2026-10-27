@@ -1,0 +1,53 @@
+<section class="section" style="background-color: {{ section.settings.background_color }};">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <header class="section-heading"><h2>{{ section.settings.heading | escape }}</h2></header>
+    {% endif %}
+    <div class="promo-grid">
+      {% for block in section.blocks %}
+        <article class="promo-card" {{ block.shopify_attributes }} style="--promo-text-color: {{ block.settings.text_color }};">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 1400 | image_tag: widths: '600, 900, 1200, 1400', sizes: '(min-width: 761px) 50vw, 100vw', loading: 'lazy' }}
+          {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+          {% endif %}
+          <div class="promo-card-content">
+            {% if block.settings.eyebrow != blank %}<p>{{ block.settings.eyebrow | escape }}</p>{% endif %}
+            <h3>{{ block.settings.heading | escape }}</h3>
+            {% if block.settings.text != blank %}<p>{{ block.settings.text | escape }}</p>{% endif %}
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a class="button button--secondary" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banners promocionales",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título de sección", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "color", "id": "background_color", "label": "Color de fondo", "default": "#EEE4DA" }
+  ],
+  "blocks": [
+    {
+      "type": "promo",
+      "name": "Banner promocional",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen" },
+        { "type": "text", "id": "eyebrow", "label": "Texto superior", "default": "Lorem ipsum" },
+        { "type": "text", "id": "heading", "label": "Título", "default": "Dolor sit amet" },
+        { "type": "textarea", "id": "text", "label": "Descripción", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { "type": "text", "id": "button_label", "label": "Texto del botón", "default": "Lorem ipsum" },
+        { "type": "url", "id": "button_link", "label": "Enlace del botón" },
+        { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#FFFFFF" }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [{ "name": "Banners promocionales", "blocks": [{ "type": "promo" }, { "type": "promo" }] }]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+<section class="section" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  <div class="page-width">
+    <header class="section-heading">
+      <h2>{{ section.settings.heading | escape }}</h2>
+      {% if section.settings.text != blank %}<p>{{ section.settings.text | escape }}</p>{% endif %}
+    </header>
+    <div class="testimonial-grid" style="--columns: {{ section.settings.columns }};">
+      {% for block in section.blocks %}
+        <article class="testimonial-card" {{ block.shopify_attributes }}>
+          <p class="testimonial-stars" aria-label="{{ block.settings.rating }} de 5 estrellas" role="img">
+            {% for star in (1..5) %}{% if star <= block.settings.rating %}★{% else %}☆{% endif %}{% endfor %}
+          </p>
+          <blockquote class="testimonial-quote">{{ block.settings.quote | escape }}</blockquote>
+          <p class="testimonial-author">{{ block.settings.author | escape }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reseñas de clientes",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "text", "id": "text", "label": "Descripción" },
+    { "type": "range", "id": "columns", "min": 1, "max": 4, "step": 1, "label": "Columnas en escritorio", "default": 3 },
+    { "type": "color", "id": "background_color", "label": "Color de fondo", "default": "#EEE4DA" },
+    { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#4D0E13" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Estrellas", "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Comentario", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { "type": "text", "id": "author", "label": "Autor", "default": "Lorem Ipsum" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Reseñas de clientes", "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }] }]
+}
+{% endschema %}

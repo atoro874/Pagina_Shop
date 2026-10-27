@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+            "button_label": "Lorem ipsum",
+            "text_color": "#FFFFFF"
+          }
+        },
+        "slide-2": {
+          "type": "slide",
+          "settings": {
+            "heading": "Consectetur adipiscing elit",
+            "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "button_label": "Descubrir",
+            "text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["slide-1", "slide-2"],
+      "settings": {}
+    },
+    "categories": {
+      "type": "coming-soon-categories",
+      "blocks": {
+        "category-1": { "type": "category", "settings": { "title": "Lorem ipsum" } },
+        "category-2": { "type": "category", "settings": { "title": "Dolor sit amet" } },
+        "category-3": { "type": "category", "settings": { "title": "Consectetur" } }
+      },
+      "block_order": ["category-1", "category-2", "category-3"],
+      "settings": {}
+    },
+    "promos": {
+      "type": "split-promo-banners",
+      "blocks": {
+        "promo-1": { "type": "promo", "settings": { "eyebrow": "Lorem ipsum", "heading": "Dolor sit amet", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "button_label": "Lorem ipsum" } },
+        "promo-2": { "type": "promo", "settings": { "eyebrow": "Consectetur", "heading": "Adipiscing elit", "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "button_label": "Descubrir" } }
+      },
+      "block_order": ["promo-1", "promo-2"],
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "review-1": { "type": "review", "settings": { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "author": "Lorem Ipsum" } },
+        "review-2": { "type": "review", "settings": { "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "author": "Dolor Sit" } },
+        "review-3": { "type": "review", "settings": { "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.", "author": "Consectetur" } }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
+      "settings": {}
+    }
+  },
+  "order": ["hero", "categories", "promos", "testimonials"]
+}

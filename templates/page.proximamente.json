@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "coming-soon-page",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

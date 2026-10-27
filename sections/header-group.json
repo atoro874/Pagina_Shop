@@ -1,0 +1,15 @@
+{
+  "type": "header",
+  "name": "Encabezado",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_width": 160,
+        "logo_text": "Mi tienda",
+        "show_account": true
+      }
+    }
+  },
+  "order": ["header"]
+}
