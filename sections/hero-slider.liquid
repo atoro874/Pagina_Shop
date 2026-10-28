@@ -1,4 +1,4 @@
-<section class="hero-slider" data-slider aria-label="{{ section.settings.accessibility_label | escape }}">
+<section class="hero-slider" data-slider aria-label="{{ section.settings.accessibility_label | escape }}" style="--hero-background: {{ section.settings.background_color }};">
   {% for block in section.blocks %}
     {% assign slide_heading_tag = 'h2' %}
     {% assign image_loading = 'lazy' %}
@@ -6,17 +6,23 @@
       {% assign slide_heading_tag = 'h1' %}
       {% assign image_loading = 'eager' %}
     {% endif %}
-    <div class="hero-slide" data-slide {{ block.shopify_attributes }}{% unless forloop.first %} hidden aria-hidden="true"{% else %} aria-hidden="false"{% endunless %} style="--hero-text-color: {{ block.settings.text_color }};">
-      {% if block.settings.image != blank %}
-        {{ block.settings.image | image_url: width: 2400 | image_tag: class: 'hero-slide-image', widths: '750, 1100, 1500, 2000, 2400', sizes: '100vw', loading: image_loading }}
-      {% else %}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-slide-image' }}
-      {% endif %}
+    <div class="hero-slide" data-slide {{ block.shopify_attributes }}{% unless forloop.first %} hidden aria-hidden="true"{% else %} aria-hidden="false"{% endunless %} style="--hero-text-color: {{ block.settings.text_color }}; --hero-accent-color: {{ block.settings.accent_color }};">
       <div class="hero-slide-content">
-        <{{ slide_heading_tag }}>{{ block.settings.heading | escape }}</{{ slide_heading_tag }}>
-        {% if block.settings.text != blank %}<p>{{ block.settings.text | escape }}</p>{% endif %}
+        {% if block.settings.eyebrow != blank %}<p class="hero-eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}
+        <{{ slide_heading_tag }}>
+          {{ block.settings.heading | escape }}
+          {% if block.settings.heading_accent != blank %}<span>{{ block.settings.heading_accent | escape }}</span>{% endif %}
+        </{{ slide_heading_tag }}>
+        {% if block.settings.text != blank %}<div class="hero-description">{{ block.settings.text | escape | newline_to_br }}</div>{% endif %}
         {% if block.settings.button_label != blank and block.settings.button_link != blank %}
-          <a class="button" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+          <a class="button hero-button" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+        {% endif %}
+      </div>
+      <div class="hero-slide-media">
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 1600 | image_tag: class: 'hero-slide-image', widths: '500, 750, 1000, 1300, 1600', sizes: '(min-width: 761px) 55vw, 100vw', loading: image_loading }}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-slide-image' }}
         {% endif %}
       </div>
     </div>
@@ -29,9 +35,11 @@
   {% if section.blocks.size > 1 %}
     <div class="hero-controls" aria-label="Controles del carrusel">
       <button type="button" data-slider-previous aria-label="Diapositiva anterior">&larr;</button>
-      {% for block in section.blocks %}
-        <button type="button" data-slider-dot aria-label="Ir a la diapositiva {{ forloop.index }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"></button>
-      {% endfor %}
+      <div class="hero-dots">
+        {% for block in section.blocks %}
+          <button type="button" data-slider-dot aria-label="Ir a la diapositiva {{ forloop.index }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"></button>
+        {% endfor %}
+      </div>
       <button type="button" data-slider-next aria-label="Siguiente diapositiva">&rarr;</button>
     </div>
   {% endif %}
@@ -42,7 +50,8 @@
   "name": "Hero slider",
   "settings": [
     { "type": "text", "id": "accessibility_label", "label": "Etiqueta accesible", "default": "Destacados de la tienda" },
-    { "type": "text", "id": "empty_heading", "label": "Título sin diapositivas", "default": "Añade una diapositiva destacada" }
+    { "type": "text", "id": "empty_heading", "label": "Título sin diapositivas", "default": "Añade una diapositiva destacada" },
+    { "type": "color", "id": "background_color", "label": "Color de fondo", "default": "#EEE4DA" }
   ],
   "blocks": [
     {
@@ -50,11 +59,14 @@
       "name": "Diapositiva",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Imagen" },
-        { "type": "text", "id": "heading", "label": "Título", "default": "Una historia para descubrir" },
-        { "type": "textarea", "id": "text", "label": "Texto", "default": "Presenta tu colección con una imagen y un mensaje especial." },
+        { "type": "text", "id": "eyebrow", "label": "Texto superior", "default": "LOREM IPSUM DOLOR SIT AMET" },
+        { "type": "text", "id": "heading", "label": "Título", "default": "Lorem ipsum dolor" },
+        { "type": "text", "id": "heading_accent", "label": "Texto destacado", "default": "sit amet" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
         { "type": "text", "id": "button_label", "label": "Texto del botón", "default": "Descubrir" },
         { "type": "url", "id": "button_link", "label": "Enlace del botón" },
-        { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#FFFFFF" }
+        { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#4D0E13" },
+        { "type": "color", "id": "accent_color", "label": "Color del texto destacado", "default": "#C8A49F" }
       ]
     }
   ],

@@ -1,0 +1,62 @@
+<section class="value-propositions" style="--value-background: {{ section.settings.background_color }}; --value-text: {{ section.settings.text_color }};">
+  <div class="page-width value-grid" style="--columns: {{ section.settings.columns }};">
+    {% for block in section.blocks %}
+      <article class="value-item" {{ block.shopify_attributes }}>
+        <span class="value-icon" aria-hidden="true">
+          {% case block.settings.icon %}
+            {% when 'leaf' %}
+              <svg viewBox="0 0 32 32"><path d="M25 5C14 5 7 9 7 18c0 5 4 8 8 8 9 0 10-10 10-21Z"></path><path d="M5 28c4-8 9-12 16-17"></path></svg>
+            {% when 'flask' %}
+              <svg viewBox="0 0 32 32"><path d="M12 4h8M14 4v9L7 25a2 2 0 0 0 2 3h14a2 2 0 0 0 2-3l-7-12V4M11 22h10"></path><path d="m13 18 2 2 4-4"></path></svg>
+            {% when 'drop' %}
+              <svg viewBox="0 0 32 32"><path d="M16 3C12 10 7 15 7 21a9 9 0 0 0 18 0c0-6-5-11-9-18Z"></path><path d="M12 22c.5 2 2 3 4 3"></path></svg>
+            {% when 'sparkle' %}
+              <svg viewBox="0 0 32 32"><path d="m16 3 2.5 9.5L28 15l-9.5 2.5L16 27l-2.5-9.5L4 15l9.5-2.5L16 3Z"></path><path d="m25 22 1.2 3.8L30 27l-3.8 1.2L25 32"></path></svg>
+          {% endcase %}
+        </span>
+        <div>
+          <h2>{{ block.settings.heading | escape }}</h2>
+          {% if block.settings.text != blank %}<p>{{ block.settings.text | escape }}</p>{% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Beneficios",
+  "settings": [
+    { "type": "range", "id": "columns", "min": 2, "max": 4, "step": 1, "label": "Columnas", "default": 3 },
+    { "type": "color", "id": "background_color", "label": "Color de fondo", "default": "#EEE4DA" },
+    { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#4D0E13" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icono", "options": [
+          { "value": "leaf", "label": "Hoja" },
+          { "value": "flask", "label": "Frasco" },
+          { "value": "drop", "label": "Gota" },
+          { "value": "sparkle", "label": "Destello" }
+        ], "default": "leaf" },
+        { "type": "text", "id": "heading", "label": "Título", "default": "Lorem ipsum dolor" },
+        { "type": "textarea", "id": "text", "label": "Descripción", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Beneficios",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "leaf", "heading": "Lorem ipsum" } },
+        { "type": "benefit", "settings": { "icon": "flask", "heading": "Dolor sit amet" } },
+        { "type": "benefit", "settings": { "icon": "drop", "heading": "Consectetur" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

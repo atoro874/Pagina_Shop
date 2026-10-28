@@ -6,54 +6,68 @@
         "slide-1": {
           "type": "slide",
           "settings": {
-            "heading": "Lorem ipsum dolor sit amet",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-            "button_label": "Lorem ipsum",
-            "text_color": "#FFFFFF"
+            "eyebrow": "LOREM IPSUM DOLOR SIT AMET",
+            "heading": "Lorem ipsum dolor",
+            "heading_accent": "sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "button_label": "Descubrir",
+            "button_link": "/pages/proximamente",
+            "text_color": "#4D0E13",
+            "accent_color": "#C8A49F"
           }
         },
         "slide-2": {
           "type": "slide",
           "settings": {
-            "heading": "Consectetur adipiscing elit",
-            "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "button_label": "Descubrir",
-            "text_color": "#FFFFFF"
+            "eyebrow": "CONSECTETUR ADIPISCING ELIT",
+            "heading": "Dolor sit amet",
+            "heading_accent": "consectetur",
+            "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+            "button_label": "Ver productos",
+            "button_link": "/pages/proximamente",
+            "text_color": "#4D0E13",
+            "accent_color": "#C8A49F"
           }
         }
       },
       "block_order": ["slide-1", "slide-2"],
       "settings": {}
     },
-    "categories": {
-      "type": "coming-soon-categories",
+    "benefits": {
+      "type": "value-propositions",
       "blocks": {
-        "category-1": { "type": "category", "settings": { "title": "Lorem ipsum" } },
-        "category-2": { "type": "category", "settings": { "title": "Dolor sit amet" } },
-        "category-3": { "type": "category", "settings": { "title": "Consectetur" } }
+        "benefit-1": { "type": "benefit", "settings": { "icon": "leaf", "heading": "Lorem ipsum", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." } },
+        "benefit-2": { "type": "benefit", "settings": { "icon": "flask", "heading": "Dolor sit amet", "text": "Sed do eiusmod tempor incididunt ut labore et dolore." } },
+        "benefit-3": { "type": "benefit", "settings": { "icon": "drop", "heading": "Consectetur", "text": "Ut enim ad minim veniam, quis nostrud exercitation." } }
       },
-      "block_order": ["category-1", "category-2", "category-3"],
+      "block_order": ["benefit-1", "benefit-2", "benefit-3"],
       "settings": {}
     },
-    "promos": {
-      "type": "split-promo-banners",
-      "blocks": {
-        "promo-1": { "type": "promo", "settings": { "eyebrow": "Lorem ipsum", "heading": "Dolor sit amet", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "button_label": "Lorem ipsum" } },
-        "promo-2": { "type": "promo", "settings": { "eyebrow": "Consectetur", "heading": "Adipiscing elit", "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "button_label": "Descubrir" } }
-      },
-      "block_order": ["promo-1", "promo-2"],
-      "settings": {}
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Lorem ipsum dolor sit amet",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "view_all_label": "Ver colección",
+        "button_label": "Añadir al carrito",
+        "sold_out_label": "Agotado",
+        "price_from": "Desde",
+        "empty_message": "Selecciona una colección para mostrar tus productos destacados.",
+        "background_color": "#EEE4DA",
+        "text_color": "#4D0E13"
+      }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "review-1": { "type": "review", "settings": { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "author": "Lorem Ipsum" } },
-        "review-2": { "type": "review", "settings": { "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "author": "Dolor Sit" } },
-        "review-3": { "type": "review", "settings": { "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.", "author": "Consectetur" } }
+        "review-1": { "type": "review", "settings": { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "author": "Lorem Ipsum", "rating": 5 } },
+        "review-2": { "type": "review", "settings": { "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "author": "Dolor Sit", "rating": 5 } },
+        "review-3": { "type": "review", "settings": { "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.", "author": "Consectetur", "rating": 5 } }
       },
       "block_order": ["review-1", "review-2", "review-3"],
       "settings": {}
     }
   },
-  "order": ["hero", "categories", "promos", "testimonials"]
+  "order": ["hero", "benefits", "products", "testimonials"]
 }
