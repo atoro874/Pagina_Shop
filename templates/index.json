@@ -12,40 +12,40 @@
     "hero": {
       "type": "hero-slider",
       "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "name": "CreceM",
-          "settings": {
-            "image": "shopify://shop_images/CreceM.jpg",
-            "eyebrow": "LOREM IPSUM DOLOR SIT AMET",
-            "heading": "CRECE MIEMBRO – Gel masculino",
-            "heading_accent": "sit amet",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "button_label": "Descubrir",
-            "button_link": "/pages/proximamente",
-            "text_color": "#4d0e13",
-            "accent_color": "#c8a49f"
-          }
-        },
         "slide-2": {
           "type": "slide",
           "name": "MeroM",
           "settings": {
             "image": "shopify://shop_images/Prod_1.1.jpg",
-            "eyebrow": "CONSECTETUR ADIPISCING ELIT",
-            "heading": "Dolor sit amet",
-            "heading_accent": "consectetur",
-            "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+            "eyebrow": "",
+            "heading": "MERO MACHO",
+            "heading_accent": "Barras de gelatina eróticas",
+            "text": "Deliciosas barras de gelatina sabor manzana con semillas de chía, creadas para complementar la energía, vitalidad, deseo y rendimiento masculino.",
             "button_label": "Ver productos",
             "button_link": "/pages/proximamente",
             "text_color": "#4d0e13",
             "accent_color": "#c8a49f"
           }
+        },
+        "slide-1": {
+          "type": "slide",
+          "name": "CreceM",
+          "settings": {
+            "image": "shopify://shop_images/CreceM.jpg",
+            "eyebrow": "",
+            "heading": "CRECE MIEMBRO",
+            "heading_accent": "Gel masculino",
+            "text": "Gel de uso externo diseñado para masajes íntimos masculinos. Su textura facilita la aplicación y proporciona una sensación estimulante en la zona.",
+            "button_label": "Descubrir",
+            "button_link": "/pages/proximamente",
+            "text_color": "#32090C",
+            "accent_color": "#9F0F0F"
+          }
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2"
+        "slide-2",
+        "slide-1"
       ],
       "settings": {
         "accessibility_label": "Destacados de la tienda",
