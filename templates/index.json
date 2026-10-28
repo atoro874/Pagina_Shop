@@ -38,8 +38,8 @@
             "text": "Gel de uso externo diseñado para masajes íntimos masculinos. Su textura facilita la aplicación y proporciona una sensación estimulante en la zona.",
             "button_label": "Descubrir",
             "button_link": "/pages/proximamente",
-            "text_color": "#32090C",
-            "accent_color": "#9F0F0F"
+            "text_color": "#32090c",
+            "accent_color": "#9f0f0f"
           }
         }
       },
@@ -112,6 +112,14 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
+        "review_FHHLwy": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "Lorem Ipsum"
+          }
+        },
         "review-1": {
           "type": "review",
           "settings": {
@@ -138,6 +146,7 @@
         }
       },
       "block_order": [
+        "review_FHHLwy",
         "review-1",
         "review-2",
         "review-3"
