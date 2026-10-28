@@ -14,10 +14,11 @@
       "blocks": {
         "slide-1": {
           "type": "slide",
+          "name": "CreceM",
           "settings": {
             "image": "shopify://shop_images/CreceM.jpg",
             "eyebrow": "LOREM IPSUM DOLOR SIT AMET",
-            "heading": "Lorem ipsum dolor",
+            "heading": "CRECE MIEMBRO – Gel masculino",
             "heading_accent": "sit amet",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "button_label": "Descubrir",
@@ -28,6 +29,7 @@
         },
         "slide-2": {
           "type": "slide",
+          "name": "MeroM",
           "settings": {
             "image": "shopify://shop_images/Prod_1.1.jpg",
             "eyebrow": "CONSECTETUR ADIPISCING ELIT",
