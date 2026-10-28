@@ -1,43 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-slider",
       "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "eyebrow": "LOREM IPSUM DOLOR SIT AMET",
-            "heading": "Lorem ipsum dolor",
-            "heading_accent": "sit amet",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "button_label": "Descubrir",
-            "button_link": "/pages/proximamente",
-            "text_color": "#4D0E13",
-            "accent_color": "#C8A49F",
-            "features_background": "#EEE4DA",
-            "feature_1_icon": "leaf",
-            "feature_1_heading": "Lorem ipsum",
-            "feature_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "feature_2_icon": "flask",
-            "feature_2_heading": "Dolor sit amet",
-            "feature_2_text": "Sed do eiusmod tempor incididunt ut labore et dolore.",
-            "feature_3_icon": "drop",
-            "feature_3_heading": "Consectetur",
-            "feature_3_text": "Ut enim ad minim veniam, quis nostrud exercitation."
-          }
-        },
         "slide-2": {
           "type": "slide",
+          "name": "MeroM",
           "settings": {
-            "eyebrow": "CONSECTETUR ADIPISCING ELIT",
-            "heading": "Dolor sit amet",
-            "heading_accent": "consectetur",
-            "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            "button_label": "Ver productos",
+            "image": "shopify://shop_images/Prod_1.1.jpg",
+            "eyebrow": "",
+            "heading": "MERO MACHO",
+            "heading_accent": "Barras de gelatina eróticas",
+            "text": "Deliciosas barras de gelatina sabor manzana con semillas de chía, creadas para complementar la energía, vitalidad, deseo y rendimiento masculino.",
+            "button_label": "",
             "button_link": "/pages/proximamente",
-            "text_color": "#4D0E13",
-            "accent_color": "#C8A49F",
-            "features_background": "#EEE4DA",
+            "text_color": "#4d0e13",
+            "accent_color": "#c8a49f",
+            "features_background": "#eee4da",
             "feature_1_icon": "sparkle",
             "feature_1_heading": "Adipiscing elit",
             "feature_1_text": "Duis aute irure dolor in reprehenderit in voluptate.",
@@ -48,15 +36,49 @@
             "feature_3_heading": "Tempor incididunt",
             "feature_3_text": "Sunt in culpa qui officia deserunt mollit anim."
           }
+        },
+        "slide-1": {
+          "type": "slide",
+          "name": "CreceM",
+          "settings": {
+            "image": "shopify://shop_images/CreceM.jpg",
+            "eyebrow": "",
+            "heading": "CRECE MIEMBRO",
+            "heading_accent": "Gel masculino",
+            "text": "Gel de uso externo diseñado para masajes íntimos masculinos. Su textura facilita la aplicación y proporciona una sensación estimulante en la zona.",
+            "button_label": "",
+            "button_link": "/pages/proximamente",
+            "text_color": "#32090c",
+            "accent_color": "#9f0f0f",
+            "features_background": "#eee4da",
+            "feature_1_icon": "leaf",
+            "feature_1_heading": "Lorem ipsum",
+            "feature_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "feature_2_icon": "flask",
+            "feature_2_heading": "Dolor sit amet",
+            "feature_2_text": "Sed do eiusmod tempor incididunt ut labore et dolore.",
+            "feature_3_icon": "drop",
+            "feature_3_heading": "Consectetur",
+            "feature_3_text": "Ut enim ad minim veniam, quis nostrud exercitation."
+          }
         }
       },
-      "block_order": ["slide-1", "slide-2"],
-      "settings": {}
+      "block_order": [
+        "slide-2",
+        "slide-1"
+      ],
+      "settings": {
+        "accessibility_label": "Destacados de la tienda",
+        "empty_heading": "Añade una diapositiva destacada",
+        "background_color": "#eee4da"
+      }
     },
     "products": {
       "type": "featured-products",
       "settings": {
         "heading": "Lorem ipsum dolor sit amet",
+        "text": "",
+        "collection": "",
         "products_to_show": 4,
         "show_view_all": true,
         "view_all_label": "Ver colección",
@@ -64,19 +86,61 @@
         "sold_out_label": "Agotado",
         "price_from": "Desde",
         "empty_message": "Selecciona una colección para mostrar tus productos destacados.",
-        "background_color": "#EEE4DA",
-        "text_color": "#4D0E13"
+        "background_color": "#eee4da",
+        "text_color": "#4d0e13"
       }
     },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "review-1": { "type": "review", "settings": { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "author": "Lorem Ipsum", "rating": 5 } },
-        "review-2": { "type": "review", "settings": { "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "author": "Dolor Sit", "rating": 5 } },
-        "review-3": { "type": "review", "settings": { "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.", "author": "Consectetur", "rating": 5 } }
+        "review_FHHLwy": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "Lorem Ipsum"
+          }
+        },
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "Lorem Ipsum"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "author": "Dolor Sit"
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+            "author": "Consectetur"
+          }
+        }
       },
-      "block_order": ["review-1", "review-2", "review-3"],
-      "settings": {}
+      "block_order": [
+        "review_FHHLwy",
+        "review-1",
+        "review-2",
+        "review-3"
+      ],
+      "settings": {
+        "heading": "Lorem ipsum dolor sit amet",
+        "text": "",
+        "parallax_speed": 15,
+        "overlay_opacity": 55,
+        "columns": 3,
+        "background_color": "#c8a49f",
+        "text_color": "#4d0e13"
+      }
     }
   },
   "order": ["hero", "products", "testimonials"]
