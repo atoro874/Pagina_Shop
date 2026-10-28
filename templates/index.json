@@ -13,7 +13,17 @@
             "button_label": "Descubrir",
             "button_link": "/pages/proximamente",
             "text_color": "#4D0E13",
-            "accent_color": "#C8A49F"
+            "accent_color": "#C8A49F",
+            "features_background": "#EEE4DA",
+            "feature_1_icon": "leaf",
+            "feature_1_heading": "Lorem ipsum",
+            "feature_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "feature_2_icon": "flask",
+            "feature_2_heading": "Dolor sit amet",
+            "feature_2_text": "Sed do eiusmod tempor incididunt ut labore et dolore.",
+            "feature_3_icon": "drop",
+            "feature_3_heading": "Consectetur",
+            "feature_3_text": "Ut enim ad minim veniam, quis nostrud exercitation."
           }
         },
         "slide-2": {
@@ -26,21 +36,21 @@
             "button_label": "Ver productos",
             "button_link": "/pages/proximamente",
             "text_color": "#4D0E13",
-            "accent_color": "#C8A49F"
+            "accent_color": "#C8A49F",
+            "features_background": "#EEE4DA",
+            "feature_1_icon": "sparkle",
+            "feature_1_heading": "Adipiscing elit",
+            "feature_1_text": "Duis aute irure dolor in reprehenderit in voluptate.",
+            "feature_2_icon": "truck",
+            "feature_2_heading": "Sed do eiusmod",
+            "feature_2_text": "Excepteur sint occaecat cupidatat non proident.",
+            "feature_3_icon": "shield",
+            "feature_3_heading": "Tempor incididunt",
+            "feature_3_text": "Sunt in culpa qui officia deserunt mollit anim."
           }
         }
       },
       "block_order": ["slide-1", "slide-2"],
-      "settings": {}
-    },
-    "benefits": {
-      "type": "value-propositions",
-      "blocks": {
-        "benefit-1": { "type": "benefit", "settings": { "icon": "leaf", "heading": "Lorem ipsum", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." } },
-        "benefit-2": { "type": "benefit", "settings": { "icon": "flask", "heading": "Dolor sit amet", "text": "Sed do eiusmod tempor incididunt ut labore et dolore." } },
-        "benefit-3": { "type": "benefit", "settings": { "icon": "drop", "heading": "Consectetur", "text": "Ut enim ad minim veniam, quis nostrud exercitation." } }
-      },
-      "block_order": ["benefit-1", "benefit-2", "benefit-3"],
       "settings": {}
     },
     "products": {
@@ -69,5 +79,5 @@
       "settings": {}
     }
   },
-  "order": ["hero", "benefits", "products", "testimonials"]
+  "order": ["hero", "products", "testimonials"]
 }
