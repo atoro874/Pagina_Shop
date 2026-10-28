@@ -15,6 +15,7 @@
         "slide-1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/CreceM.jpg",
             "eyebrow": "LOREM IPSUM DOLOR SIT AMET",
             "heading": "Lorem ipsum dolor",
             "heading_accent": "sit amet",
