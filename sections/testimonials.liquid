@@ -1,4 +1,14 @@
-<section class="section" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+{% assign testimonial_background_image = 'none' %}
+{% if section.settings.background_image != blank %}
+  {% assign testimonial_background_url = section.settings.background_image | image_url: width: 2400 %}
+  {% assign testimonial_background_image = 'url(' | append: testimonial_background_url | append: ')' %}
+{% endif %}
+<section
+  class="section testimonial-section"
+  data-parallax
+  data-parallax-speed="{{ section.settings.parallax_speed }}"
+  style="--reviews-background: {{ section.settings.background_color }}; --reviews-text: {{ section.settings.text_color }}; --reviews-image: {{ testimonial_background_image }}; --reviews-overlay-opacity: {{ section.settings.overlay_opacity | times: 0.01 }};"
+>
   <div class="page-width">
     <header class="section-heading">
       <h2>{{ section.settings.heading | escape }}</h2>
@@ -36,6 +46,9 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Título", "default": "Lorem ipsum dolor sit amet" },
     { "type": "text", "id": "text", "label": "Descripción" },
+    { "type": "image_picker", "id": "background_image", "label": "Imagen de fondo con parallax" },
+    { "type": "range", "id": "parallax_speed", "min": 0, "max": 40, "step": 5, "label": "Intensidad del parallax", "default": 15 },
+    { "type": "range", "id": "overlay_opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "label": "Opacidad del fondo", "default": 55 },
     { "type": "range", "id": "columns", "min": 1, "max": 4, "step": 1, "label": "Columnas en escritorio", "default": 3 },
     { "type": "color", "id": "background_color", "label": "Color de fondo", "default": "#C8A49F" },
     { "type": "color", "id": "text_color", "label": "Color del texto", "default": "#4D0E13" }
