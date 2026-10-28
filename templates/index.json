@@ -52,14 +52,14 @@
             "accent_color": "#9f0f0f",
             "features_background": "#eee4da",
             "feature_1_icon": "leaf",
-            "feature_1_heading": "Lorem ipsum",
-            "feature_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "feature_1_heading": "Sensación de activación y vitalidad",
+            "feature_1_text": "",
             "feature_2_icon": "flask",
-            "feature_2_heading": "Dolor sit amet",
-            "feature_2_text": "Sed do eiusmod tempor incididunt ut labore et dolore.",
+            "feature_2_heading": "Componentes de rápida absorción",
+            "feature_2_text": "",
             "feature_3_icon": "drop",
-            "feature_3_heading": "Consectetur",
-            "feature_3_text": "Ut enim ad minim veniam, quis nostrud exercitation."
+            "feature_3_heading": " Textura ligera y fácil de aplicar",
+            "feature_3_text": ""
           }
         }
       },
@@ -116,21 +116,12 @@
             "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "author": "Dolor Sit"
           }
-        },
-        "review-3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-            "author": "Consectetur"
-          }
         }
       },
       "block_order": [
         "review_FHHLwy",
         "review-1",
-        "review-2",
-        "review-3"
+        "review-2"
       ],
       "settings": {
         "heading": "Lorem ipsum dolor sit amet",
@@ -143,5 +134,9 @@
       }
     }
   },
-  "order": ["hero", "products", "testimonials"]
+  "order": [
+    "hero",
+    "products",
+    "testimonials"
+  ]
 }
