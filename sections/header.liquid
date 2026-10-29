@@ -1,9 +1,23 @@
 <header class="site-header">
   {% if section.settings.show_announcement %}
     <div class="announcement-bar" style="--announcement-background: {{ section.settings.announcement_background }}; --announcement-text: {{ section.settings.announcement_text_color }};">
-      {% if section.settings.announcement_link != blank %}<a href="{{ section.settings.announcement_link }}">{% endif %}
-        {{ section.settings.announcement_text | escape }}
-      {% if section.settings.announcement_link != blank %}</a>{% endif %}
+      <div class="announcement-track">
+        <div class="announcement-group">
+          {% if section.settings.announcement_link != blank %}
+            <a class="announcement-item" href="{{ section.settings.announcement_link }}">{{ section.settings.announcement_text | escape }}</a>
+          {% else %}
+            <span class="announcement-item">{{ section.settings.announcement_text | escape }}</span>
+          {% endif %}
+          {% for repeat in (1..3) %}
+            <span class="announcement-item" aria-hidden="true">{{ section.settings.announcement_text | escape }}</span>
+          {% endfor %}
+        </div>
+        <div class="announcement-group" aria-hidden="true">
+          {% for repeat in (1..4) %}
+            <span class="announcement-item">{{ section.settings.announcement_text | escape }}</span>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   {% endif %}
   <div class="header-inner">
