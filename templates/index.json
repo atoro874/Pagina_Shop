@@ -82,8 +82,9 @@
           "type": "related_product",
           "settings": {
             "product": "",
-            "title": "Lorem ipsum",
-            "price": "Lorem ipsum",
+            "image": "shopify://shop_images/1.jpg",
+            "title": "PROXIMAMENTE",
+            "price": "",
             "link": ""
           }
         },
@@ -91,8 +92,9 @@
           "type": "related_product",
           "settings": {
             "product": "",
-            "title": "Dolor sit amet",
-            "price": "Lorem ipsum",
+            "image": "shopify://shop_images/2.jpg",
+            "title": "PROXIMAMENTE",
+            "price": "",
             "link": ""
           }
         },
@@ -100,8 +102,9 @@
           "type": "related_product",
           "settings": {
             "product": "",
-            "title": "Consectetur",
-            "price": "Lorem ipsum",
+            "image": "shopify://shop_images/Gemini_Generated_Image_g3z3llg3z3llg3z3.jpg",
+            "title": "PROXIMAMENTE",
+            "price": "",
             "link": ""
           }
         }
@@ -121,9 +124,9 @@
         "related-3"
       ],
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "text_color": "#4d0e13",
-        "accent_color": "#E2C0BB",
+        "accent_color": "#e2c0bb",
         "badge_text": "Lorem ipsum",
         "product_title": "Lorem ipsum dolor sit amet",
         "rating_score": 5,
@@ -148,7 +151,7 @@
         "reviews_eyebrow": "Lorem ipsum",
         "reviews_heading": "Comentarios de clientes",
         "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "reviews_background": "#D8C4AC",
+        "reviews_background": "#d8c4ac",
         "faq_heading": "Preguntas frecuentes",
         "faq_background": "#eee4da",
         "show_related_products": true,
