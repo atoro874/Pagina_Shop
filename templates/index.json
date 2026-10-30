@@ -60,22 +60,22 @@
         "faq-1": {
           "type": "faq",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            "question": "¿El envío es totalmente discreto?",
+            "answer": "<p>Sí, absolutamente. Todos nuestros paquetes se envían en cajas o sobres completamente sellados, sin ningún tipo de logotipo, marca o descripción externa que revele el contenido. Tu privacidad es nuestra prioridad.<br/><br/></p>"
           }
         },
         "faq-2": {
           "type": "faq",
           "settings": {
-            "question": "Consectetur adipiscing elit?",
-            "answer": "<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+            "question": "¿Cómo funciona el pago contra entrega?",
+            "answer": "<p>Compras de forma segura sin necesidad de tarjeta de crédito por anticipado. Haces tu pedido hoy y pagas en efectivo directamente a la empresa de mensajería al momento de recibir el paquete en la puerta de tu casa.</p>"
           }
         },
         "faq-3": {
           "type": "faq",
           "settings": {
-            "question": "Ut enim ad minim veniam?",
-            "answer": "<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+            "question": "¿Cuánto tarda en llegar el pedido?",
+            "answer": "<p>&nbsp;Los tiempos de envío varían según la ciudad, pero por lo general los pedidos se procesan y entregan en un tiempo estimado de 2 a 4 días hábiles. Si los datos están incompletos o confusos te contactaremos para confirmar los datos antes de realizar el despacho.</p>"
           }
         },
         "related-1": {
