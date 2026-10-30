@@ -220,7 +220,9 @@
       {% for block in faq_blocks %}
         <details class="product-faq-item" {{ block.shopify_attributes }}>
           <summary>{{ block.settings.question | escape }}</summary>
-          <div class="product-faq-answer rte">{{ block.settings.answer }}</div>
+          <div class="product-faq-answer">
+            <div class="product-faq-answer-inner rte">{{ block.settings.answer }}</div>
+          </div>
         </details>
       {% endfor %}
     </div>

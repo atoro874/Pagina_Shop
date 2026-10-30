@@ -1954,11 +1954,36 @@ a.announcement-item {
 }
 
 .product-faq-answer {
-  padding: 0 2rem 1rem 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms ease;
+}
+
+.product-faq-item[open] .product-faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.product-faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 320ms ease;
+}
+
+.product-faq-item[open] .product-faq-answer-inner {
+  visibility: visible;
 }
 
 .product-faq-answer > *:first-child {
   margin-top: 0;
+}
+
+.product-faq-answer-inner > *:first-child {
+  margin-top: 0;
+}
+
+.product-faq-answer-inner > *:last-child {
+  margin-bottom: 1rem;
 }
 
 .related-products {
@@ -2198,7 +2223,6 @@ a.announcement-item {
   }
 
   .product-faq-answer {
-    padding-bottom: 0.75rem;
     font-size: 0.85rem;
   }
 
@@ -2245,6 +2269,8 @@ a.announcement-item {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .product-faq-answer,
+  .product-faq-answer-inner,
   .product-faq-item summary::after,
   .related-product-image img {
     transition-duration: 0.01ms !important;
