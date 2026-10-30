@@ -16,21 +16,21 @@
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/Prod_1.1.jpg",
-            "alt": "Lorem ipsum"
+            "alt": "Mero Macho"
           }
         },
         "gallery-2": {
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/CreceM.jpg",
-            "alt": "Lorem ipsum"
+            "alt": "Crece Miembro"
           }
         },
         "gallery-4": {
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/as.jpg",
-            "alt": "Lorem ipsum"
+            "alt": "Nueva Presentacion"
           }
         },
         "review-1": {
@@ -130,18 +130,18 @@
         "badge_text": "",
         "product_title": "MERO MACHO + CRECE MIEMBRO",
         "rating_score": 5,
-        "review_count": "Lorem comentarios",
+        "review_count": "+480 Clientes Satisfechos",
         "price_text": "79.900",
         "compare_price_text": "120.900",
         "discount_label": "33%",
         "introduction": "<p>&nbsp; Una combinación diseñada para hombres que quieren complementar sus momentos íntimos con energía, <strong>confianza y una experiencia más intensa</strong>.&nbsp;<br/><br/></p>",
         "buy_button_label": "Comprar Ya!",
-        "service_1_title": "Lorem ipsum",
-        "service_1_text": "Lorem ipsum dolor sit amet",
-        "service_2_title": "Lorem ipsum",
-        "service_2_text": "Lorem ipsum dolor sit amet",
-        "service_3_title": "Lorem ipsum",
-        "service_3_text": "Lorem ipsum dolor sit amet",
+        "service_1_title": "ENVIO GRATIS",
+        "service_1_text": "",
+        "service_2_title": "ENVIO SEGURO",
+        "service_2_text": "",
+        "service_3_title": "PAGO CONTRA ENTREGA",
+        "service_3_text": "",
         "details_tab_label": "Detalles",
         "details_heading": "Lorem ipsum dolor sit amet",
         "details_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li><li>Sed do eiusmod tempor incididunt.</li></ul>",
