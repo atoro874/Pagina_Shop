@@ -256,25 +256,7 @@
                 {% endif %}
               </div>
               <div class="related-product-details">
-                <h3>
-                  {% if block.settings.title != blank %}
-                    {{ block.settings.title | escape }}
-                  {% elsif block.settings.product != blank %}
-                    {{ block.settings.product.title | escape }}
-                  {% else %}
-                    Lorem ipsum
-                  {% endif %}
-                </h3>
-                <div class="related-product-rating" aria-hidden="true">★★★★★ <span>Lorem</span></div>
-                <p>
-                  {% if block.settings.price != blank %}
-                    {{ block.settings.price | escape }}
-                  {% elsif block.settings.product != blank %}
-                    {{ block.settings.product.price | money }}
-                  {% else %}
-                    Lorem ipsum
-                  {% endif %}
-                </p>
+                <h3>PROXIMAMENTE</h3>
               </div>
             {% if recommendation_href != blank %}</a>{% else %}</div>{% endif %}
           </article>
