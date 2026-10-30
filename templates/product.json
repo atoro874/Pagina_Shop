@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "Lorem Ipsum"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "author": "Dolor Sit"
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+            "author": "Consectetur"
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
+      "settings": {
+        "background_color": "#EEE4DA",
+        "text_color": "#4D0E13",
+        "accent_color": "#C8A49F",
+        "badge_text": "Lorem ipsum",
+        "rating_score": 5,
+        "review_count": "Lorem comentarios",
+        "discount_label": "Lorem ipsum",
+        "buy_button_label": "Comprar Ya!",
+        "service_1_title": "Envío",
+        "service_1_text": "Lorem ipsum dolor sit amet",
+        "service_2_title": "Devoluciones",
+        "service_2_text": "Lorem ipsum dolor sit amet",
+        "service_3_title": "Pago seguro",
+        "service_3_text": "Lorem ipsum dolor sit amet",
+        "details_tab_label": "Detalles",
+        "details_heading": "Lorem ipsum dolor sit amet",
+        "details_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li><li>Sed do eiusmod tempor incididunt.</li></ul>",
+        "materials_tab_label": "Materiales",
+        "materials_heading": "Lorem ipsum dolor sit amet",
+        "materials_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li></ul>",
+        "reviews_eyebrow": "Lorem ipsum",
+        "reviews_heading": "Comentarios de clientes",
+        "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "reviews_background": "#D8C4AC"
+      }
+    }
+  },
+  "order": ["main"]
+}

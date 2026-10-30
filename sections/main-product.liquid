@@ -1,0 +1,254 @@
+<section
+  id="ProductMain-{{ section.id }}"
+  class="product-page"
+  style="--product-background: {{ section.settings.background_color }}; --product-text: {{ section.settings.text_color }}; --product-accent: {{ section.settings.accent_color }};"
+>
+  <div class="page-width">
+    <div class="product-overview">
+      <div class="product-gallery" data-product-gallery>
+        <div class="product-gallery-thumbnails" role="group" aria-label="Imágenes del producto">
+          {% for image in product.images %}
+            {% assign image_alt = image.alt | default: product.title %}
+            <button
+              class="product-thumbnail{% if forloop.first %} is-selected{% endif %}"
+              type="button"
+              data-product-thumbnail="{{ forloop.index0 }}"
+              aria-label="Ver imagen {{ forloop.index }} de {{ product.images.size }}"
+              aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+            >
+              {{ image | image_url: width: 180 | image_tag: loading: 'lazy', alt: image_alt }}
+            </button>
+          {% endfor %}
+        </div>
+
+        <div class="product-gallery-stage">
+          {% if product.images.size > 0 %}
+            {% for image in product.images %}
+              {% assign image_alt = image.alt | default: product.title %}
+              <div
+                class="product-gallery-image"
+                data-product-gallery-image="{{ forloop.index0 }}"
+                {% unless forloop.first %}hidden aria-hidden="true"{% else %}aria-hidden="false"{% endunless %}
+              >
+                {% assign image_loading = 'lazy' %}
+                {% if forloop.first %}{% assign image_loading = 'eager' %}{% endif %}
+                {{ image | image_url: width: 1600 | image_tag: widths: '500, 750, 1000, 1300, 1600', sizes: '(min-width: 1000px) 48vw, 100vw', loading: image_loading, alt: image_alt }}
+              </div>
+            {% endfor %}
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'product-gallery-placeholder' }}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="product-summary">
+        {% if section.settings.badge_text != blank %}
+          <p class="product-badge">{{ section.settings.badge_text | escape }}</p>
+        {% endif %}
+        <h1>{{ product.title | escape }}</h1>
+
+        <div class="product-rating" aria-label="Calificación {{ section.settings.rating_score }} de 5; {{ section.settings.review_count | escape }}">
+          <span class="product-rating-stars" aria-hidden="true">
+            {% for star in (1..5) %}
+              <span{% if star > section.settings.rating_score %} class="is-empty"{% endif %}>★</span>
+            {% endfor %}
+          </span>
+          <span>{{ section.settings.rating_score }}/5 ({{ section.settings.review_count | escape }})</span>
+        </div>
+
+        <div class="product-price">
+          <span>{{ product.selected_or_first_available_variant.price | money }}</span>
+          {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+            <s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
+            <span class="product-discount">{{ section.settings.discount_label | escape }}</span>
+          {% endif %}
+        </div>
+
+        <div class="product-introduction rte">
+          {% if product.description != blank %}
+            {{ product.description }}
+          {% else %}
+            {{ section.settings.introduction }}
+          {% endif %}
+        </div>
+
+        <button class="button product-buy-button" type="button">
+          {{ section.settings.buy_button_label | escape }}
+        </button>
+
+        <div class="product-service-points">
+          {% for service_index in (1..3) %}
+            {% assign service_title_key = 'service_' | append: service_index | append: '_title' %}
+            {% assign service_text_key = 'service_' | append: service_index | append: '_text' %}
+            <div class="product-service-point">
+              <span class="product-service-icon" aria-hidden="true">
+                {% case service_index %}
+                  {% when 1 %}
+                    <svg viewBox="0 0 24 24"><path d="M2 5h12v12H2zM14 9h4l4 4v4h-8z"></path><circle cx="7" cy="19" r="2"></circle><circle cx="18" cy="19" r="2"></circle></svg>
+                  {% when 2 %}
+                    <svg viewBox="0 0 24 24"><path d="M12 3 21 7v5c0 5-3.5 8-9 10-5.5-2-9-5-9-10V7l9-4Z"></path><path d="m8 12 3 3 5-6"></path></svg>
+                  {% when 3 %}
+                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg>
+                {% endcase %}
+              </span>
+              <span>
+                <strong>{{ section.settings[service_title_key] | escape }}</strong>
+                <span>{{ section.settings[service_text_key] | escape }}</span>
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="product-information" data-product-tabs>
+      <div class="product-tabs" role="tablist" aria-label="Información del producto">
+        <button
+          class="product-tab"
+          id="ProductTabDetails-{{ section.id }}"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="ProductPanelDetails-{{ section.id }}"
+          data-product-tab="details"
+        >{{ section.settings.details_tab_label | escape }}</button>
+        <button
+          class="product-tab"
+          id="ProductTabMaterials-{{ section.id }}"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="ProductPanelMaterials-{{ section.id }}"
+          data-product-tab="materials"
+        >{{ section.settings.materials_tab_label | escape }}</button>
+      </div>
+
+      <div
+        class="product-tab-panel"
+        id="ProductPanelDetails-{{ section.id }}"
+        role="tabpanel"
+        aria-labelledby="ProductTabDetails-{{ section.id }}"
+        data-product-panel="details"
+        aria-hidden="false"
+      >
+        <div class="product-tab-copy rte">
+          <h2>{{ section.settings.details_heading | escape }}</h2>
+          {{ section.settings.details_content }}
+        </div>
+        <div class="product-tab-image">
+          {% if section.settings.details_image != blank %}
+            {{ section.settings.details_image | image_url: width: 1000 | image_tag: widths: '400, 600, 800, 1000', loading: 'lazy' }}
+          {% else %}
+            {{ 'product-2' | placeholder_svg_tag: 'product-tab-placeholder' }}
+          {% endif %}
+        </div>
+      </div>
+
+      <div
+        class="product-tab-panel"
+        id="ProductPanelMaterials-{{ section.id }}"
+        role="tabpanel"
+        aria-labelledby="ProductTabMaterials-{{ section.id }}"
+        data-product-panel="materials"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="product-tab-copy rte">
+          <h2>{{ section.settings.materials_heading | escape }}</h2>
+          {{ section.settings.materials_content }}
+        </div>
+        <div class="product-tab-image">
+          {% if section.settings.materials_image != blank %}
+            {{ section.settings.materials_image | image_url: width: 1000 | image_tag: widths: '400, 600, 800, 1000', loading: 'lazy' }}
+          {% else %}
+            {{ 'product-3' | placeholder_svg_tag: 'product-tab-placeholder' }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-reviews" style="--reviews-background: {{ section.settings.reviews_background }}; --reviews-text: {{ section.settings.text_color }};">
+  <div class="page-width">
+    <header class="product-reviews-heading">
+      <p class="product-eyebrow">{{ section.settings.reviews_eyebrow | escape }}</p>
+      <h2>{{ section.settings.reviews_heading | escape }}</h2>
+      {% if section.settings.reviews_subheading != blank %}
+        <p>{{ section.settings.reviews_subheading | escape }}</p>
+      {% endif %}
+    </header>
+
+    <div class="product-reviews-grid">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <article class="product-review-card" {{ block.shopify_attributes }}>
+            <div class="product-review-stars" aria-label="Calificación {{ block.settings.rating }} de 5">
+              {% for star in (1..5) %}
+                <span aria-hidden="true"{% if star > block.settings.rating %} class="is-empty"{% endif %}>★</span>
+              {% endfor %}
+            </div>
+            <p class="product-review-quote">{{ block.settings.quote | escape }}</p>
+            <p class="product-review-author">{{ block.settings.author | escape }}</p>
+          </article>
+        {% endfor %}
+      {% else %}
+        {% for review_index in (1..3) %}
+          <article class="product-review-card">
+            <div class="product-review-stars" aria-hidden="true">★★★★★</div>
+            <p class="product-review-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="product-review-author">Lorem Ipsum</p>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ficha de producto",
+  "settings": [
+    { "type": "color", "id": "background_color", "label": "Fondo", "default": "#EEE4DA" },
+    { "type": "color", "id": "text_color", "label": "Texto", "default": "#4D0E13" },
+    { "type": "color", "id": "accent_color", "label": "Acento", "default": "#C8A49F" },
+    { "type": "text", "id": "badge_text", "label": "Etiqueta del producto", "default": "Lorem ipsum" },
+    { "type": "range", "id": "rating_score", "min": 1, "max": 5, "step": 1, "label": "Calificación", "default": 5 },
+    { "type": "text", "id": "review_count", "label": "Cantidad de comentarios", "default": "Lorem comentarios" },
+    { "type": "text", "id": "discount_label", "label": "Etiqueta de descuento", "default": "Lorem ipsum" },
+    { "type": "richtext", "id": "introduction", "label": "Descripción alternativa", "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>" },
+    { "type": "text", "id": "buy_button_label", "label": "Texto del botón", "default": "Comprar Ya!" },
+    { "type": "text", "id": "service_1_title", "label": "Servicio 1", "default": "Envío" },
+    { "type": "text", "id": "service_1_text", "label": "Descripción del servicio 1", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "text", "id": "service_2_title", "label": "Servicio 2", "default": "Devoluciones" },
+    { "type": "text", "id": "service_2_text", "label": "Descripción del servicio 2", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "text", "id": "service_3_title", "label": "Servicio 3", "default": "Pago seguro" },
+    { "type": "text", "id": "service_3_text", "label": "Descripción del servicio 3", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "text", "id": "details_tab_label", "label": "Pestaña de detalles", "default": "Detalles" },
+    { "type": "text", "id": "details_heading", "label": "Título de detalles", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "richtext", "id": "details_content", "label": "Texto de detalles", "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li><li>Sed do eiusmod tempor incididunt.</li></ul>" },
+    { "type": "image_picker", "id": "details_image", "label": "Imagen de detalles" },
+    { "type": "text", "id": "materials_tab_label", "label": "Pestaña de materiales", "default": "Materiales" },
+    { "type": "text", "id": "materials_heading", "label": "Título de materiales", "default": "Lorem ipsum dolor sit amet" },
+    { "type": "richtext", "id": "materials_content", "label": "Texto de materiales", "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li></ul>" },
+    { "type": "image_picker", "id": "materials_image", "label": "Imagen de materiales" },
+    { "type": "text", "id": "reviews_eyebrow", "label": "Texto superior de comentarios", "default": "Lorem ipsum" },
+    { "type": "text", "id": "reviews_heading", "label": "Título de comentarios", "default": "Comentarios de clientes" },
+    { "type": "text", "id": "reviews_subheading", "label": "Subtítulo de comentarios", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+    { "type": "color", "id": "reviews_background", "label": "Fondo de comentarios", "default": "#D8C4AC" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Comentario",
+      "settings": [
+        { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Estrellas", "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Comentario", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { "type": "text", "id": "author", "label": "Autor", "default": "Lorem Ipsum" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Ficha de producto", "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }] }]
+}
+{% endschema %}

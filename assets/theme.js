@@ -143,3 +143,98 @@ document.querySelectorAll('[data-coming-soon]').forEach((page) => {
     }
   }, 1000);
 });
+
+document.querySelectorAll('[data-product-gallery]').forEach((gallery) => {
+  const thumbnails = Array.from(gallery.querySelectorAll('[data-product-thumbnail]'));
+  const images = Array.from(gallery.querySelectorAll('[data-product-gallery-image]'));
+
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener('click', () => {
+      const selectedIndex = thumbnail.dataset.productThumbnail;
+
+      thumbnails.forEach((item) => {
+        const selected = item === thumbnail;
+        item.classList.toggle('is-selected', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+
+      images.forEach((image) => {
+        const selected = image.dataset.productGalleryImage === selectedIndex;
+        image.hidden = !selected;
+        image.inert = !selected;
+        image.setAttribute('aria-hidden', String(!selected));
+      });
+    });
+  });
+});
+
+document.querySelectorAll('[data-product-tabs]').forEach((tabs) => {
+  const buttons = Array.from(tabs.querySelectorAll('[data-product-tab]'));
+  const panels = Array.from(tabs.querySelectorAll('[data-product-panel]'));
+  let isTransitioning = false;
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (isTransitioning || button.getAttribute('aria-selected') === 'true') return;
+
+      const currentButton = buttons.find((item) => item.getAttribute('aria-selected') === 'true');
+      const currentPanel = panels.find((panel) => panel.dataset.productPanel === currentButton?.dataset.productTab);
+      const nextPanel = panels.find((panel) => panel.dataset.productPanel === button.dataset.productTab);
+      if (!currentPanel || !nextPanel) return;
+
+      isTransitioning = true;
+      buttons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+      currentPanel.classList.add('is-fading');
+      nextPanel.hidden = false;
+      nextPanel.inert = false;
+      nextPanel.setAttribute('aria-hidden', 'false');
+      nextPanel.classList.add('is-fading');
+
+      window.requestAnimationFrame(() => nextPanel.classList.remove('is-fading'));
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.setTimeout(() => {
+        currentPanel.hidden = true;
+        currentPanel.inert = true;
+        currentPanel.setAttribute('aria-hidden', 'true');
+        currentPanel.classList.remove('is-fading');
+        isTransitioning = false;
+      }, reducedMotion ? 20 : 500);
+    });
+
+    button.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+
+      event.preventDefault();
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      const currentIndex = buttons.indexOf(button);
+      const nextIndex = (currentIndex + direction + buttons.length) % buttons.length;
+      buttons[nextIndex].focus();
+      buttons[nextIndex].click();
+    });
+  });
+});
+
+document.querySelectorAll('[data-coming-soon-overlay]').forEach((overlay) => {
+  document.querySelectorAll('[data-coming-soon-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (!overlay.hidden) return;
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      overlay.hidden = false;
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.remove('is-closing');
+      window.requestAnimationFrame(() => overlay.classList.add('is-visible'));
+
+      window.setTimeout(() => {
+        overlay.classList.add('is-closing');
+        overlay.classList.remove('is-visible');
+        window.setTimeout(() => {
+          overlay.hidden = true;
+          overlay.setAttribute('aria-hidden', 'true');
+          overlay.classList.remove('is-closing');
+        }, reducedMotion ? 20 : 500);
+      }, reducedMotion ? 500 : 2200);
+    });
+  });
+});
