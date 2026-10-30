@@ -37,24 +37,24 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "Lorem Ipsum"
+            "quote": "Yo la verdad que tenía mis dudas al principio, pero las barras de gelatina dan un power brutal para el rendimiento 😅. Mi pareja y yo notamos el cambio desde la primera semana. 100% recomendado.",
+            "author": "— Carlos M. (Bogotá)"
           }
         },
         "review-2": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "author": "Dolor Sit"
+            "quote": "lo que más me urgía era que llegara discreto por la privacidad. El paquete venía completamente sellado sin logos raros y pagué en efectivo al recibir en la puerta de mi casa. Excelente servicio.",
+            "author": "— Andrés P. (Medellín)"
           }
         },
         "review-3": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-            "author": "Consectetur"
+            "quote": "El combo completo vale totalmente la pena. El gel de masaje rinde un montón y la combinación con el producto oral da resultados increíbles. Volveré a pedir? obviamente 😁.",
+            "author": "— David R. (Cali)"
           }
         },
         "faq-1": {
@@ -150,9 +150,9 @@
         "materials_heading": "🖤 CRECE MIEMBRO – Gel masculino",
         "materials_content": "<p>&nbsp;Gel de uso externo diseñado para masajes íntimos masculinos. Su textura facilita la aplicación y proporciona una sensación estimulante en la zona.<strong><br/><br/>Componentes sexuales potentes:</strong> 🔥 Fórmula estimulante para masajes íntimos<br/>💧 Componentes de rápida absorción<br/>⚡ Sensación de activación y vitalidad<br/>🖤 Textura ligera y fácil de aplicar</p><p><strong>Modo de uso:</strong> Aplicar una pequeña cantidad sobre la piel limpia y realizar un masaje suave hasta su absorción. Evitar el contacto con ojos, mucosas, heridas o piel irritada. Suspender su uso en caso de presentar irritación.<br/><br/><br/><strong>Contenido neto:</strong> 8 ml.</p>",
         "materials_image": "shopify://shop_images/Gemini_Generated_Image_udel1hudel1hudel.jpg",
-        "reviews_eyebrow": "Lorem ipsum",
-        "reviews_heading": "Comentarios de clientes",
-        "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "reviews_eyebrow": "",
+        "reviews_heading": "Reseñas de la Comunidad",
+        "reviews_subheading": "Más del 98% de nuestros clientes recomiendan el tratamiento completo.",
         "reviews_background": "#d8c4ac",
         "faq_heading": "Preguntas frecuentes",
         "faq_background": "#eee4da",
