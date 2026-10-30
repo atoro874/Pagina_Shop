@@ -542,7 +542,7 @@ a.announcement-item {
   background: var(--footer-background, var(--color-burgundy));
 }
 
-.site-footer::before {
+.footer-gradient {
   display: block;
   height: clamp(2.5rem, 6vw, 5rem);
   background: linear-gradient(
