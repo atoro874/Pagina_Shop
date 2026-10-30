@@ -1,104 +1,30 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "hero": {
-      "type": "hero-slider",
+    "main": {
+      "type": "home-product-showcase",
       "blocks": {
-        "slide-2": {
-          "type": "slide",
-          "name": "MeroM",
+        "gallery-1": {
+          "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/Prod_1.1.jpg",
-            "eyebrow": "",
-            "heading": "MERO MACHO",
-            "heading_accent": "Barras de gelatina eróticas",
-            "text": "Deliciosas barras de gelatina sabor manzana con semillas de chía, creadas para complementar la energía, vitalidad, deseo y rendimiento masculino.",
-            "button_label": "",
-            "button_link": "/pages/proximamente",
-            "text_color": "#4d0e13",
-            "accent_color": "#c8a49f",
-            "features_background": "#eee4da",
-            "feature_1_icon": "sparkle",
-            "feature_1_heading": "Componentes energizantes",
-            "feature_1_text": "",
-            "feature_2_icon": "leaf",
-            "feature_2_heading": "Sabor manzana",
-            "feature_2_text": "",
-            "feature_3_icon": "flask",
-            "feature_3_heading": "Fórmula de apoyo al deseo y rendimiento masculino",
-            "feature_3_text": ""
+            "alt": "Lorem ipsum"
           }
         },
-        "slide-1": {
-          "type": "slide",
-          "name": "CreceM",
+        "gallery-2": {
+          "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/CreceM.jpg",
-            "eyebrow": "",
-            "heading": "CRECE MIEMBRO",
-            "heading_accent": "Gel masculino",
-            "text": "Gel de uso externo diseñado para masajes íntimos masculinos. Su textura facilita la aplicación y proporciona una sensación estimulante en la zona.",
-            "button_label": "",
-            "button_link": "/pages/proximamente",
-            "text_color": "#32090c",
-            "accent_color": "#9f0f0f",
-            "features_background": "#eee4da",
-            "feature_1_icon": "leaf",
-            "feature_1_heading": "Sensación de activación y vitalidad",
-            "feature_1_text": "",
-            "feature_2_icon": "flask",
-            "feature_2_heading": "Componentes de rápida absorción",
-            "feature_2_text": "",
-            "feature_3_icon": "drop",
-            "feature_3_heading": " Textura ligera y fácil de aplicar",
-            "feature_3_text": ""
+            "alt": "Lorem ipsum"
           }
-        }
-      },
-      "block_order": [
-        "slide-2",
-        "slide-1"
-      ],
-      "settings": {
-        "accessibility_label": "Destacados de la tienda",
-        "empty_heading": "Añade una diapositiva destacada",
-        "background_color": "#eee4da"
-      }
-    },
-    "products": {
-      "type": "featured-products",
-      "settings": {
-        "heading": "Lorem ipsum dolor sit amet",
-        "text": "",
-        "collection": "",
-        "products_to_show": 4,
-        "show_view_all": true,
-        "view_all_label": "Ver colección",
-        "button_label": "Añadir al carrito",
-        "sold_out_label": "Agotado",
-        "price_from": "Desde",
-        "empty_message": "Selecciona una colección para mostrar tus productos destacados.",
-        "background_color": "#eee4da",
-        "text_color": "#4d0e13"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "review_FHHLwy": {
-          "type": "review",
+        },
+        "gallery-3": {
+          "type": "gallery_image",
           "settings": {
-            "rating": 5,
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "Lorem Ipsum"
+            "alt": "Lorem ipsum"
+          }
+        },
+        "gallery-4": {
+          "type": "gallery_image",
+          "settings": {
+            "alt": "Lorem ipsum"
           }
         },
         "review-1": {
@@ -116,27 +42,56 @@
             "quote": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "author": "Dolor Sit"
           }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+            "author": "Consectetur"
+          }
         }
       },
       "block_order": [
-        "review_FHHLwy",
+        "gallery-1",
+        "gallery-2",
+        "gallery-3",
+        "gallery-4",
         "review-1",
-        "review-2"
+        "review-2",
+        "review-3"
       ],
       "settings": {
-        "heading": "Lorem ipsum dolor sit amet",
-        "text": "",
-        "parallax_speed": 15,
-        "overlay_opacity": 55,
-        "columns": 3,
-        "background_color": "#c8a49f",
-        "text_color": "#4d0e13"
+        "background_color": "#EEE4DA",
+        "text_color": "#4D0E13",
+        "accent_color": "#C8A49F",
+        "badge_text": "Lorem ipsum",
+        "product_title": "Lorem ipsum dolor sit amet",
+        "rating_score": 5,
+        "review_count": "Lorem comentarios",
+        "price_text": "Lorem ipsum",
+        "compare_price_text": "Lorem ipsum",
+        "discount_label": "Lorem ipsum",
+        "introduction": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+        "buy_button_label": "Comprar Ya!",
+        "service_1_title": "Lorem ipsum",
+        "service_1_text": "Lorem ipsum dolor sit amet",
+        "service_2_title": "Lorem ipsum",
+        "service_2_text": "Lorem ipsum dolor sit amet",
+        "service_3_title": "Lorem ipsum",
+        "service_3_text": "Lorem ipsum dolor sit amet",
+        "details_tab_label": "Detalles",
+        "details_heading": "Lorem ipsum dolor sit amet",
+        "details_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li><li>Sed do eiusmod tempor incididunt.</li></ul>",
+        "materials_tab_label": "Materiales",
+        "materials_heading": "Lorem ipsum dolor sit amet",
+        "materials_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p><ul><li>Lorem ipsum dolor sit amet.</li><li>Consectetur adipiscing elit.</li></ul>",
+        "reviews_eyebrow": "Lorem ipsum",
+        "reviews_heading": "Comentarios de clientes",
+        "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "reviews_background": "#D8C4AC"
       }
     }
   },
-  "order": [
-    "hero",
-    "products",
-    "testimonials"
-  ]
+  "order": ["main"]
 }
