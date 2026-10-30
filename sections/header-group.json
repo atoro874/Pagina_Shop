@@ -15,13 +15,15 @@
       "type": "header",
       "settings": {
         "show_announcement": true,
-        "announcement_text": "30% DE DESCUENTO | LOREM IPSUM DOLOR SIT AMET",
+        "announcement_text": "30% DE DESCUENTO",
         "announcement_link": "",
-        "announcement_background": "#c8a49f",
+        "announcement_background": "#470112",
         "announcement_text_color": "#ffffff",
         "logo_width": 140,
         "logo_text": "NexuStore",
-        "menu": "",
+        "home_label": "Home",
+        "coming_soon_text": "Próximamente",
+        "show_search": true,
         "show_account": true
       }
     }

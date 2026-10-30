@@ -1,29 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "home-product-showcase",
       "blocks": {
-        "gallery-1": {
+        "gallery-3": {
           "type": "gallery_image",
           "settings": {
+            "image": "shopify://shop_images/Prod_1.1.jpg",
             "alt": "Lorem ipsum"
           }
         },
         "gallery-2": {
           "type": "gallery_image",
           "settings": {
-            "alt": "Lorem ipsum"
-          }
-        },
-        "gallery-3": {
-          "type": "gallery_image",
-          "settings": {
+            "image": "shopify://shop_images/CreceM.jpg",
             "alt": "Lorem ipsum"
           }
         },
         "gallery-4": {
           "type": "gallery_image",
           "settings": {
+            "image": "shopify://shop_images/as.jpg",
             "alt": "Lorem ipsum"
           }
         },
@@ -75,29 +81,34 @@
         "related-1": {
           "type": "related_product",
           "settings": {
+            "product": "",
             "title": "Lorem ipsum",
-            "price": "Lorem ipsum"
+            "price": "Lorem ipsum",
+            "link": ""
           }
         },
         "related-2": {
           "type": "related_product",
           "settings": {
+            "product": "",
             "title": "Dolor sit amet",
-            "price": "Lorem ipsum"
+            "price": "Lorem ipsum",
+            "link": ""
           }
         },
         "related-3": {
           "type": "related_product",
           "settings": {
+            "product": "",
             "title": "Consectetur",
-            "price": "Lorem ipsum"
+            "price": "Lorem ipsum",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "gallery-1",
-        "gallery-2",
         "gallery-3",
+        "gallery-2",
         "gallery-4",
         "review-1",
         "review-2",
@@ -110,9 +121,9 @@
         "related-3"
       ],
       "settings": {
-        "background_color": "#EEE4DA",
-        "text_color": "#4D0E13",
-        "accent_color": "#C8A49F",
+        "background_color": "#FFFFFF",
+        "text_color": "#4d0e13",
+        "accent_color": "#E2C0BB",
         "badge_text": "Lorem ipsum",
         "product_title": "Lorem ipsum dolor sit amet",
         "rating_score": 5,
@@ -139,12 +150,15 @@
         "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "reviews_background": "#D8C4AC",
         "faq_heading": "Preguntas frecuentes",
-        "faq_background": "#EEE4DA",
+        "faq_background": "#eee4da",
         "show_related_products": true,
         "related_heading": "Productos relacionados",
+        "related_link": "",
         "related_link_label": "Ver todos"
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
