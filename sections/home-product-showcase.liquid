@@ -212,6 +212,78 @@
   </div>
 </section>
 
+<section class="product-faq" style="--faq-background: {{ section.settings.faq_background }}; --faq-text: {{ section.settings.text_color }};">
+  <div class="page-width">
+    <h2>{{ section.settings.faq_heading | escape }}</h2>
+    <div class="product-faq-list">
+      {% assign faq_blocks = section.blocks | where: 'type', 'faq' %}
+      {% for block in faq_blocks %}
+        <details class="product-faq-item" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question | escape }}</summary>
+          <div class="product-faq-answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.show_related_products %}
+  <section class="related-products">
+    <div class="page-width">
+      <header class="related-products-heading">
+        <h2>{{ section.settings.related_heading | escape }}</h2>
+        {% if section.settings.related_link != blank %}
+          <a href="{{ section.settings.related_link }}">{{ section.settings.related_link_label | escape }}</a>
+        {% endif %}
+      </header>
+      <div class="related-products-grid">
+        {% assign related_blocks = section.blocks | where: 'type', 'related_product' %}
+        {% for block in related_blocks %}
+          <article class="related-product-card" {{ block.shopify_attributes }}>
+            {% assign recommendation_href = block.settings.link %}
+            {% if block.settings.product != blank %}
+              {% assign recommendation_href = block.settings.product.url %}
+            {% endif %}
+            {% if recommendation_href != blank %}<a class="related-product-link" href="{{ recommendation_href }}">{% else %}<div class="related-product-link">{% endif %}
+              <div class="related-product-image">
+                {% if block.settings.product != blank and block.settings.product.featured_image != blank %}
+                  {% assign recommendation_alt = block.settings.product.featured_image.alt | default: block.settings.product.title %}
+                  {{ block.settings.product.featured_image | image_url: width: 600 | image_tag: widths: '240, 360, 480, 600', loading: 'lazy', alt: recommendation_alt }}
+                {% elsif block.settings.image != blank %}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: widths: '240, 360, 480, 600', loading: 'lazy', alt: block.settings.title }}
+                {% else %}
+                  {{ 'product-1' | placeholder_svg_tag }}
+                {% endif %}
+              </div>
+              <div class="related-product-details">
+                <h3>
+                  {% if block.settings.title != blank %}
+                    {{ block.settings.title | escape }}
+                  {% elsif block.settings.product != blank %}
+                    {{ block.settings.product.title | escape }}
+                  {% else %}
+                    Lorem ipsum
+                  {% endif %}
+                </h3>
+                <div class="related-product-rating" aria-hidden="true">★★★★★ <span>Lorem</span></div>
+                <p>
+                  {% if block.settings.price != blank %}
+                    {{ block.settings.price | escape }}
+                  {% elsif block.settings.product != blank %}
+                    {{ block.settings.product.price | money }}
+                  {% else %}
+                    Lorem ipsum
+                  {% endif %}
+                </p>
+              </div>
+            {% if recommendation_href != blank %}</a>{% else %}</div>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
 {% schema %}
 {
   "name": "Producto en inicio",
@@ -245,7 +317,13 @@
     { "type": "text", "id": "reviews_eyebrow", "label": "Texto superior de comentarios", "default": "Lorem ipsum" },
     { "type": "text", "id": "reviews_heading", "label": "Título de comentarios", "default": "Comentarios de clientes" },
     { "type": "text", "id": "reviews_subheading", "label": "Subtítulo de comentarios", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-    { "type": "color", "id": "reviews_background", "label": "Fondo de comentarios", "default": "#D8C4AC" }
+    { "type": "color", "id": "reviews_background", "label": "Fondo de comentarios", "default": "#D8C4AC" },
+    { "type": "text", "id": "faq_heading", "label": "Título de preguntas", "default": "Preguntas frecuentes" },
+    { "type": "color", "id": "faq_background", "label": "Fondo de preguntas", "default": "#EEE4DA" },
+    { "type": "checkbox", "id": "show_related_products", "label": "Mostrar productos relacionados", "default": true },
+    { "type": "text", "id": "related_heading", "label": "Título de productos relacionados", "default": "Productos relacionados" },
+    { "type": "url", "id": "related_link", "label": "Enlace para ver productos" },
+    { "type": "text", "id": "related_link_label", "label": "Texto del enlace", "default": "Ver todos" }
   ],
   "blocks": [
     {
@@ -264,9 +342,28 @@
         { "type": "textarea", "id": "quote", "label": "Comentario", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
         { "type": "text", "id": "author", "label": "Autor", "default": "Lorem Ipsum" }
       ]
+    },
+    {
+      "type": "faq",
+      "name": "Pregunta frecuente",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta", "default": "Lorem ipsum dolor sit amet?" },
+        { "type": "richtext", "id": "answer", "label": "Respuesta", "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>" }
+      ]
+    },
+    {
+      "type": "related_product",
+      "name": "Producto relacionado",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Producto de Shopify" },
+        { "type": "image_picker", "id": "image", "label": "Imagen alternativa" },
+        { "type": "text", "id": "title", "label": "Título alternativo", "default": "Lorem ipsum" },
+        { "type": "text", "id": "price", "label": "Precio alternativo", "default": "Lorem ipsum" },
+        { "type": "url", "id": "link", "label": "Enlace alternativo" }
+      ]
     }
   ],
-  "max_blocks": 8,
+  "max_blocks": 20,
   "presets": [
     {
       "name": "Producto en inicio",
@@ -277,7 +374,13 @@
         { "type": "gallery_image" },
         { "type": "review" },
         { "type": "review" },
-        { "type": "review" }
+        { "type": "review" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "related_product" },
+        { "type": "related_product" },
+        { "type": "related_product" }
       ]
     }
   ]

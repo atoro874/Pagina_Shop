@@ -50,6 +50,48 @@
             "quote": "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
             "author": "Consectetur"
           }
+        },
+        "faq-1": {
+          "type": "faq",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq",
+          "settings": {
+            "question": "Consectetur adipiscing elit?",
+            "answer": "<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq",
+          "settings": {
+            "question": "Ut enim ad minim veniam?",
+            "answer": "<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          }
+        },
+        "related-1": {
+          "type": "related_product",
+          "settings": {
+            "title": "Lorem ipsum",
+            "price": "Lorem ipsum"
+          }
+        },
+        "related-2": {
+          "type": "related_product",
+          "settings": {
+            "title": "Dolor sit amet",
+            "price": "Lorem ipsum"
+          }
+        },
+        "related-3": {
+          "type": "related_product",
+          "settings": {
+            "title": "Consectetur",
+            "price": "Lorem ipsum"
+          }
         }
       },
       "block_order": [
@@ -59,7 +101,13 @@
         "gallery-4",
         "review-1",
         "review-2",
-        "review-3"
+        "review-3",
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "related-1",
+        "related-2",
+        "related-3"
       ],
       "settings": {
         "background_color": "#EEE4DA",
@@ -89,7 +137,12 @@
         "reviews_eyebrow": "Lorem ipsum",
         "reviews_heading": "Comentarios de clientes",
         "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "reviews_background": "#D8C4AC"
+        "reviews_background": "#D8C4AC",
+        "faq_heading": "Preguntas frecuentes",
+        "faq_background": "#EEE4DA",
+        "show_related_products": true,
+        "related_heading": "Productos relacionados",
+        "related_link_label": "Ver todos"
       }
     }
   },
