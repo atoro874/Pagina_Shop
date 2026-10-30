@@ -542,6 +542,17 @@ a.announcement-item {
   background: var(--footer-background, var(--color-burgundy));
 }
 
+.site-footer::before {
+  display: block;
+  height: clamp(2.5rem, 6vw, 5rem);
+  background: linear-gradient(
+    to bottom,
+    var(--color-creme) 0%,
+    var(--footer-background, var(--color-burgundy)) 100%
+  );
+  content: "";
+}
+
 .value-propositions {
   border-bottom: 1px solid rgb(238 228 218 / 25%);
 }
@@ -1191,7 +1202,7 @@ a.announcement-item {
 }
 
 .site-footer {
-  border-top: 1px solid var(--color-sand);
+  border-top: 0;
 }
 
 .footer-main {
