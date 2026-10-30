@@ -544,7 +544,7 @@ a.announcement-item {
 
 .footer-gradient {
   display: block;
-  height: clamp(2.5rem, 6vw, 5rem);
+  height: clamp(5rem, 12vw, 9rem);
   background: linear-gradient(
     to bottom,
     var(--color-creme) 0%,
