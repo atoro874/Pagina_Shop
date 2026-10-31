@@ -178,6 +178,7 @@
         "reviews_heading": "Reseñas de la Comunidad",
         "reviews_subheading": "Más del 98% de nuestros clientes recomiendan el tratamiento completo.",
         "reviews_background": "#d8c4ac",
+        "reviews_image": "shopify://shop_images/descarga.jpg",
         "faq_heading": "Preguntas frecuentes",
         "faq_background": "#eee4da",
         "show_related_products": true,
