@@ -1790,9 +1790,39 @@ a.announcement-item {
 }
 
 .product-reviews {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: clamp(3rem, 7vw, 5rem);
   color: var(--reviews-text, var(--color-burgundy));
   background: var(--reviews-background, var(--color-sand));
+}
+
+.product-reviews::before,
+.product-reviews::after {
+  position: absolute;
+  z-index: -1;
+  inset: -8px;
+  content: "";
+  pointer-events: none;
+}
+
+.product-reviews::before {
+  background-image: var(--reviews-image, none);
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+  transform: scale(1.02);
+}
+
+.product-reviews::after {
+  background: var(--reviews-background, var(--color-sand));
+  opacity: var(--reviews-overlay-opacity, 0);
+}
+
+.product-reviews > .page-width {
+  position: relative;
+  z-index: 1;
 }
 
 .product-reviews-heading {

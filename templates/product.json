@@ -53,7 +53,8 @@
         "reviews_eyebrow": "Lorem ipsum",
         "reviews_heading": "Comentarios de clientes",
         "reviews_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "reviews_background": "#D8C4AC"
+        "reviews_background": "#D8C4AC",
+        "reviews_image": ""
       }
     }
   },

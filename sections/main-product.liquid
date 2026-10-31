@@ -169,7 +169,15 @@
   </div>
 </section>
 
-<section class="product-reviews" style="--reviews-background: {{ section.settings.reviews_background }}; --reviews-text: {{ section.settings.text_color }};">
+<section
+  class="product-reviews"
+  style="
+    --reviews-background: {{ section.settings.reviews_background }};
+    --reviews-text: {{ section.settings.text_color }};
+    --reviews-image: {% if section.settings.reviews_image != blank %}url('{{ section.settings.reviews_image | image_url: width: 2400 }}'){% else %}none{% endif %};
+    --reviews-overlay-opacity: {% if section.settings.reviews_image != blank %}0.38{% else %}0{% endif %};
+  "
+>
   <div class="page-width">
     <header class="product-reviews-heading">
       <p class="product-eyebrow">{{ section.settings.reviews_eyebrow | escape }}</p>
@@ -235,7 +243,8 @@
     { "type": "text", "id": "reviews_eyebrow", "label": "Texto superior de comentarios", "default": "Lorem ipsum" },
     { "type": "text", "id": "reviews_heading", "label": "Título de comentarios", "default": "Comentarios de clientes" },
     { "type": "text", "id": "reviews_subheading", "label": "Subtítulo de comentarios", "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-    { "type": "color", "id": "reviews_background", "label": "Fondo de comentarios", "default": "#D8C4AC" }
+    { "type": "color", "id": "reviews_background", "label": "Fondo de comentarios", "default": "#D8C4AC" },
+    { "type": "image_picker", "id": "reviews_image", "label": "Imagen de fondo de comentarios" }
   ],
   "blocks": [
     {
