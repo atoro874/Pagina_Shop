@@ -2203,6 +2203,7 @@ a.announcement-item {
   }
 
   .product-tabs {
+    justify-content: center;
     gap: 1.2rem;
   }
 
