@@ -72,14 +72,13 @@
           {% endif %}
         </div>
 
-        <button
+        <a
+          href="/rsi-btn-hook"
           id="releasit-cod-button"
           class="button product-buy-button releasit-cod-trigger"
-          type="button"
-          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
         >
           {{ section.settings.buy_button_label | escape }}
-        </button>
+        </a>
 
         <div class="product-service-points">
           {% for service_index in (1..3) %}
