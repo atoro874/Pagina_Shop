@@ -19,13 +19,6 @@
             "alt": "Mero Macho"
           }
         },
-        "gallery-2": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/CreceM.jpg",
-            "alt": "Crece Miembro"
-          }
-        },
         "gallery-4": {
           "type": "gallery_image",
           "settings": {
@@ -139,7 +132,6 @@
       },
       "block_order": [
         "gallery-3",
-        "gallery-2",
         "gallery-4",
         "gallery_image_ryqP7X",
         "gallery_image_xxbKUz",
