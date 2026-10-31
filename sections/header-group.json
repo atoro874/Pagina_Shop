@@ -21,10 +21,10 @@
         "announcement_text_color": "#ffffff",
         "logo_width": 140,
         "logo_text": "NexuStore",
-        "home_label": "Home",
+        "home_label": "Inicio",
         "coming_soon_text": "Próximamente",
         "show_search": true,
-        "show_account": true
+        "show_account": false
       }
     }
   },
