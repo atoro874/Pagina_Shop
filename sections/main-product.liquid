@@ -72,7 +72,12 @@
           {% endif %}
         </div>
 
-        <button id="releasit-cod-button" class="button product-buy-button releasit-cod-trigger" type="button">
+        <button
+          id="releasit-cod-button"
+          class="button product-buy-button releasit-cod-trigger"
+          type="button"
+          data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+        >
           {{ section.settings.buy_button_label | escape }}
         </button>
 
