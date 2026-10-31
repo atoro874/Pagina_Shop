@@ -48,28 +48,28 @@
       {% endif %}
     {% endfor %}
 
-    {% if section.settings.show_newsletter %}
-      <div class="footer-newsletter">
-        <h2>{{ section.settings.newsletter_heading | escape }}</h2>
-        {% form 'customer', class: 'newsletter-form' %}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <label class="visually-hidden" for="FooterEmail-{{ section.id }}">Correo electrónico</label>
-          <input id="FooterEmail-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" autocomplete="email" autocorrect="off" autocapitalize="off" placeholder="{{ section.settings.email_placeholder | escape }}" required>
-          <button class="button" type="submit">{{ section.settings.newsletter_button | escape }}</button>
-          {% if form.posted_successfully? %}<p class="form-status" role="status">{{ section.settings.success_message | escape }}</p>{% endif %}
-          {% if form.errors %}<div class="form-status" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
-        {% endform %}
-      </div>
-    {% endif %}
   </div>
 
   <div class="page-width footer-bottom">
     <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. {{ section.settings.copyright_text | escape }}</p>
-    {% if section.settings.show_payment_methods and shop.enabled_payment_types.size > 0 %}
-      <div class="footer-payment-methods" aria-label="Métodos de pago">
-        {% for type in shop.enabled_payment_types %}
-          {{ type | payment_type_svg_tag }}
-        {% endfor %}
+    {% if section.settings.show_payment_methods %}
+      <div class="footer-payment-methods" aria-label="Métodos de pago aceptados">
+        <span class="footer-payment-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6" width="19" height="13" rx="2"></rect><path d="M2.5 10h19M7 15h3"></path></svg>
+          Efectivo / Pago contra entrega (COD)
+        </span>
+        <span class="footer-payment-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9h18M5 9v9m4-9v9m6-9v9m4-9v9M2 21h20M12 3 2 8h20L12 3Z"></path></svg>
+          Transferencias bancarias
+        </span>
+        <span class="footer-payment-badge footer-payment-card" aria-label="Visa">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+          VISA
+        </span>
+        <span class="footer-payment-badge footer-payment-card" aria-label="Mastercard">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+          Mastercard
+        </span>
       </div>
     {% endif %}
   </div>
@@ -89,11 +89,6 @@
     { "type": "url", "id": "facebook_url", "label": "Enlace de Facebook" },
     { "type": "url", "id": "tiktok_url", "label": "Enlace de TikTok" },
     { "type": "url", "id": "youtube_url", "label": "Enlace de YouTube" },
-    { "type": "checkbox", "id": "show_newsletter", "label": "Mostrar formulario de suscripción", "default": true },
-    { "type": "text", "id": "newsletter_heading", "label": "Título de suscripción", "default": "Recibe nuestras novedades" },
-    { "type": "text", "id": "email_placeholder", "label": "Texto de campo de correo", "default": "Tu correo electrónico" },
-    { "type": "text", "id": "newsletter_button", "label": "Texto del botón", "default": "Suscribirme" },
-    { "type": "text", "id": "success_message", "label": "Confirmación de suscripción", "default": "Gracias por suscribirte." },
     { "type": "text", "id": "copyright_text", "label": "Texto junto al copyright", "default": "Todos los derechos reservados." },
     { "type": "checkbox", "id": "show_payment_methods", "label": "Mostrar métodos de pago disponibles", "default": true }
   ],
