@@ -543,14 +543,22 @@ a.announcement-item {
 }
 
 .footer-gradient {
+  position: relative;
   display: block;
   height: clamp(5rem, 12vw, 9rem);
-  background: linear-gradient(
-    to bottom,
-    var(--color-creme) 0%,
-    var(--footer-background, var(--color-burgundy)) 100%
-  );
-  content: "";
+  overflow: hidden;
+  background: var(--color-creme);
+}
+
+.footer-wave {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-wave-base {
+  fill: var(--footer-background, var(--color-burgundy));
 }
 
 .value-propositions {
@@ -1264,6 +1272,20 @@ a.announcement-item {
 
   .footer-main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 1rem;
   }
 }
 

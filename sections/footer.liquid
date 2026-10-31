@@ -1,5 +1,21 @@
 <footer class="site-footer" style="--footer-background: {{ section.settings.background_color }}; --footer-text-color: {{ section.settings.text_color }};">
-  <div class="footer-gradient" aria-hidden="true"></div>
+  <div class="footer-gradient" aria-hidden="true">
+    <svg class="footer-wave" viewBox="0 0 1440 180" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="FooterWavePink-{{ section.id }}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#D99A9C"></stop>
+          <stop offset="1" stop-color="#A65370"></stop>
+        </linearGradient>
+        <linearGradient id="FooterWaveAccent-{{ section.id }}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#C8A49F"></stop>
+          <stop offset="1" stop-color="#8D3857"></stop>
+        </linearGradient>
+      </defs>
+      <path class="footer-wave-back" fill="url(#FooterWavePink-{{ section.id }})" d="M0 91 C70 91 79 74 133 74 C191 74 202 106 258 106 C322 106 331 50 397 50 C462 50 470 94 532 94 C598 94 613 69 675 69 C740 69 754 110 821 110 C884 110 900 61 969 61 C1031 61 1046 91 1107 91 C1171 91 1185 41 1251 41 C1320 41 1336 88 1440 76 V180 H0 Z"></path>
+      <path class="footer-wave-front" fill="url(#FooterWaveAccent-{{ section.id }})" d="M0 104 C64 104 86 82 145 82 C208 82 214 117 278 117 C340 117 358 72 420 72 C485 72 500 111 563 111 C627 111 643 84 707 84 C771 84 788 121 850 121 C915 121 931 78 995 78 C1058 78 1075 111 1138 111 C1204 111 1220 62 1284 62 C1344 62 1371 100 1440 91 V180 H0 Z"></path>
+      <path class="footer-wave-base" d="M0 122 C72 122 90 99 155 99 C222 99 234 132 300 132 C368 132 380 94 448 94 C514 94 530 128 596 128 C663 128 678 103 744 103 C812 103 827 137 895 137 C963 137 979 97 1046 97 C1112 97 1127 127 1195 127 C1264 127 1280 83 1347 83 C1389 83 1414 100 1440 104 V180 H0 Z"></path>
+    </svg>
+  </div>
   <div class="page-width footer-main">
     {% if section.settings.show_brand %}
       <div class="footer-brand">
