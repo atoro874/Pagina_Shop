@@ -33,6 +33,13 @@
             "alt": "Nueva Presentacion"
           }
         },
+        "gallery_image_ryqP7X": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_amt8x1amt8x1amt8.jpg",
+            "alt": "Lorem ipsum"
+          }
+        },
         "review-1": {
           "type": "review",
           "settings": {
@@ -127,6 +134,7 @@
         "gallery-3",
         "gallery-2",
         "gallery-4",
+        "gallery_image_ryqP7X",
         "review-1",
         "review-2",
         "review-3",
@@ -170,7 +178,6 @@
         "reviews_heading": "Reseñas de la Comunidad",
         "reviews_subheading": "Más del 98% de nuestros clientes recomiendan el tratamiento completo.",
         "reviews_background": "#d8c4ac",
-        "reviews_image": "",
         "faq_heading": "Preguntas frecuentes",
         "faq_background": "#eee4da",
         "show_related_products": true,
