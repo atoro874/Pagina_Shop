@@ -40,6 +40,13 @@
             "alt": "Lorem ipsum"
           }
         },
+        "gallery_image_xxbKUz": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/zxzxzcxzc.jpg",
+            "alt": "Lorem ipsum"
+          }
+        },
         "review-1": {
           "type": "review",
           "settings": {
@@ -135,6 +142,7 @@
         "gallery-2",
         "gallery-4",
         "gallery_image_ryqP7X",
+        "gallery_image_xxbKUz",
         "review-1",
         "review-2",
         "review-3",
