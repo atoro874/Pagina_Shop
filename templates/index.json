@@ -68,7 +68,7 @@
           "type": "faq",
           "settings": {
             "question": "¿Cómo funciona el pago contra entrega?",
-            "answer": "<p>Compras de forma segura sin necesidad de tarjeta de crédito por anticipado. Haces tu pedido hoy y pagas en efectivo directamente a la empresa de mensajería al momento de recibir el paquete en la puerta de tu casa.</p>"
+            "answer": "<p>Compras de forma segura sin necesidad de un anticipado. Haces tu pedido hoy y pagas directamente a la empresa de mensajería al momento de recibir el paquete en la puerta de tu casa.</p>"
           }
         },
         "faq-3": {
@@ -81,15 +81,15 @@
         "faq-4": {
           "type": "faq",
           "settings": {
-            "question": "¿Cómo se utiliza el gel Crece Miembro?",
-            "answer": "<p>Aplica una pequeña cantidad sobre la piel limpia y masajea suavemente hasta que se absorba. Evita el contacto con los ojos, mucosas, heridas o piel irritada. Suspende su uso si causa irritación.</p>"
+            "question": "¿Cómo se deben usar los productos del Dúo?",
+            "answer": "<p>Las barras de gelatina de Mero Macho se consumen de manera práctica como suplemento de apoyo energético (sigue las indicaciones de la etiqueta). El gel Crece Miembro es de uso externo: se aplica una pequeña cantidad dando suaves masajes según se requiera antes de la actividad.</p>"
           }
         },
         "faq-5": {
           "type": "faq",
           "settings": {
-            "question": "¿Qué incluye el combo?",
-            "answer": "<p>El combo incluye Mero Macho y Crece Miembro, tal como se muestran en esta página.</p>"
+            "question": "¿Tienen efectos secundarios o contraindicaciones?",
+            "answer": "<p>Están elaborados con componentes orientados al bienestar masculino. Sin embargo, en caso de condiciones médicas específicas o sensibilidad a alguno de los ingredientes detallados en el empaque, se recomienda consultar con un especialista antes de su uso.</p>"
           }
         },
         "related-1": {

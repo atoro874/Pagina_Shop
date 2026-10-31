@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Pie de página",
@@ -8,23 +17,32 @@
         "footer-quick-links": {
           "type": "menu",
           "settings": {
-            "heading": "Enlaces rápidos"
+            "heading": "Enlaces rápidos",
+            "menu": ""
           }
         },
         "footer-help": {
           "type": "menu",
           "settings": {
-            "heading": "Ayuda y soporte"
+            "heading": "Ayuda y soporte",
+            "menu": ""
           }
         }
       },
-      "block_order": ["footer-quick-links", "footer-help"],
+      "block_order": [
+        "footer-quick-links",
+        "footer-help"
+      ],
       "settings": {
-        "background_color": "#4D0E13",
-        "text_color": "#EEE4DA",
+        "background_color": "#4d0e13",
+        "text_color": "#eee4da",
         "show_brand": true,
         "brand_heading": "Nuestra tienda",
-        "brand_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "brand_text": "Comprometidos con tu bienestar físico e íntimo. Entregamos soluciones efectivas con atención personalizada, despachos rápidos y privacidad absoluta en cada compra.",
+        "instagram_url": "",
+        "facebook_url": "",
+        "tiktok_url": "",
+        "youtube_url": "",
         "show_newsletter": true,
         "newsletter_heading": "Recibe nuestras novedades",
         "email_placeholder": "Tu correo electrónico",
@@ -35,5 +53,7 @@
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
